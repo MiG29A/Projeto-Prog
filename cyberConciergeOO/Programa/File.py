@@ -4,8 +4,8 @@ from Client import  Client
 from Expert import Expert
 
 class File:
-    "Reiceve a file and read it"
-TESTERMASTER
+    "Receive a file and read it"
+
     def __init__(self, fileName):
         """
         Reiceve a file and open it
