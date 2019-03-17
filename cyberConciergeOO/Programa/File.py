@@ -108,11 +108,15 @@ class File:
     def __str__(self):
         return "File name: "+str(self.getFileName())
 
+    def exceptionHandling(self, otherFileObject):
+        """
+        Verify data to check if an exception must be thrown or not.
+        Requires: Other file's file objects.
+        Ensures: If an exception must be thrown, based on the requirements of the project, it will be thrown.
+        """
 
-    def __eq__ (self,other):
-        fileOne = self.getFileName
-        fileTwo = other.getFileName
-        return fileOne == FileTwo
+    def __eq__ (self, other):
+        return self.getFilenameInfo() == other.getFilenameInfo()
 
     def countLines(self):
         """
@@ -138,7 +142,7 @@ class File:
 
         return fileOne < fileTwo
 
-    def getFilenameInfo(self):
+    def setFilenameInfo(self):
         """
         Gets the Filename information, date, scope, and hour, for comparison with header, for exception throwing.
         Requires: Filename (already defined as Class attribute)
