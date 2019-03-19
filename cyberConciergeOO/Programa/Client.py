@@ -1,3 +1,4 @@
+from copy import deepcopy
 class Client:
 
     def __init__(self, name, local, start_date, start_hour, max_price, min_rep, domain, job_dur):
@@ -43,4 +44,4 @@ class Client:
         return self._clientJobDuration
 
     def getClientObject(self):
-        return self._clientObject
+        return deepcopy(self._clientObject)

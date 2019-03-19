@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 class Header:
     def __init__(self, date, time, scope):
         """
@@ -5,6 +7,8 @@ class Header:
         self._headerList=[date, time, scope]
 
     def getHeader(self):
-        return self._headerList
+        return deepcopy(self._headerList)
+
+    
         
 

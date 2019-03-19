@@ -1,6 +1,7 @@
+from copy import deepcopy
 class Expert:
     
-    def __init__(self,name, local, domain, reputation, price, lastJob_date, lastJob_hour, amount):
+    def __init__(self,name, local, domain, reputation, price, lastJob_data, lastJob_hour, amount):
         """
         Receives all the parameters pertaining to a expert, and creates a client object.
         Requires: Expert Name, Expert Localization, Expert Domain, Expert reputation,
@@ -44,7 +45,7 @@ class Expert:
             return self._expertAmount
 
         def getExpertObject(self):
-            return self._expertObject
+            return deepcopy(self._expertObject)
 
         
 

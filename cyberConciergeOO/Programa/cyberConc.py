@@ -1,16 +1,32 @@
 from File import File
+from Expert import Expert
+from Client import Client
+from UserList import ClExTest
 
-
-inFileClients = File("2019y01m12clients09h00.txt")
-inFileExperts = File("2019y01m12experts09h00.txt")
+inFileClients = File("2019y01m12clients09h00.txt") # usar sys.argv[1:]
 inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
 
+ClientUserList = ClExTest(inFileClientsContent)
 
-inFileClientsHeader.getHeader()
-for line in inFileClientsContent:
-    print (line.getClientObject())
+testes = ClientUserList.yieldList()
+for el in testes:print(el)
 
-print(inFileClients.getFilenameInfo())
-print(inFileExperts.getFilenameInfo())
-print(inFileClients == inFileExperts)
-#inFileExperts = File("2019y01m12experts09h00.txt")
+inFileExperts = File("2019y01m12experts09h00.txt") # usar sys.argv[1:]
+inFileExpertsHeader, inFileExpertsContent = inFileExperts.readFileExpert()
+
+#for line in inFileClientsContent:
+#    print (line.getClientObject())
+
+#for lin in inFileExpertsContent:
+#    print(lin.getExpertObject())
+
+
+#print(inFileClientsHeader.getHeader())
+#print(inFileExpertsHeader.getHeader())
+
+#print(inFileClients.getFilenameInfo())
+#print(inFileExperts.getFilenameInfo())
+
+
+#print(inFileClients == inFileExperts) # para comparar acho que se  faz assim : inFileClients.__eq__(inFileExperts)
+

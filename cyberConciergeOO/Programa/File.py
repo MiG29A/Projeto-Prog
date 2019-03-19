@@ -1,5 +1,5 @@
 import constants
-from Header import *
+from Header import Header
 from Client import  Client
 from Expert import Expert
 
@@ -11,12 +11,14 @@ class File:
         Ensures: a list with fileName data
         """
         self._fileName = fileName
+        
 
     def getFileName (self):
         """
         Get the name of the file
         """
         return self._fileName
+    
 
     def setFileName(self, newFileName):
         """
@@ -24,6 +26,7 @@ class File:
         Requires: newFileName is str with txt extension
         """
         self._fileName = newFileName
+        
 
     def openFile(self):
         """
@@ -142,7 +145,7 @@ class File:
 
         return fileOne < fileTwo
 
-    def setFilenameInfo(self):
+    def getFilenameInfo(self):
         """
         Gets the Filename information, date, scope, and hour, for comparison with header, for exception throwing.
         Requires: Filename (already defined as Class attribute)
