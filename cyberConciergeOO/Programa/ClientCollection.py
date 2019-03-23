@@ -1,4 +1,6 @@
 import constants
+from copy import deepcopy
+
 class ClientCollection:
     def __init__(self):
         self._clientCollection = []
@@ -12,3 +14,6 @@ class ClientCollection:
 
     def __getitem__(self, index):
         return self._clientCollection[index]
+
+    def getClientList(self):
+        return deepcopy(self._clientCollection)

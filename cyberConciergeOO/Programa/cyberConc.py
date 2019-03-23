@@ -7,7 +7,7 @@ import constants
 
 inFileClients = File("2019y01m12clients09h00.txt") # use sys.argv[1:]
 inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
-print(inFileClientsContent[0].getClientName())
+
 print(inFileClientsHeader.getHeader())
 
 inFileClientsContent.sortClient()
