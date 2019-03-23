@@ -93,7 +93,6 @@ class File:
         for line in inFile:
             name, local, start_date, start_hour, max_price, min_rep, domain, job_dur = line.strip().split(', ')
             clientList.appendClient(Client(name, local, start_date, start_hour, max_price, min_rep, domain, job_dur))
-
         return clientList
 
     def readFileContentExp(self, inFile):

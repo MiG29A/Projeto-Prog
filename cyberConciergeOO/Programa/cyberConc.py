@@ -7,15 +7,11 @@ import constants
 
 inFileClients = File("2019y01m12clients09h00.txt") # use sys.argv[1:]
 inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
-print(inFileClientsContent)
 print(inFileClientsContent[0].getClientName())
-#ClientUserList = ClExTest(inFileClientsContent)
-inFileClientsContent.sortClient()
-#testes = ClientUserList.yieldList()
-#for el in testes:print(el)
+print(inFileClientsHeader.getHeader())
 
-inFileExperts = File("2019y01m12experts09h00.txt") # usar sys.argv[1:]
-inFileExpertsHeader, inFileExpertsContent = inFileExperts.readFileExpert()
+inFileClientsContent.sortClient()
+
 
 #for line in inFileClientsContent:
 #    print (line.getClientObject())
