@@ -2,6 +2,8 @@ import constants
 from Header import Header
 from Client import  Client
 from Expert import Expert
+from collections import UserList
+from ClientCollection import ClientCollection
 
 class File:
     def __init__(self, fileName):
@@ -11,14 +13,14 @@ class File:
         Ensures: a list with fileName data
         """
         self._fileName = fileName
-        
+
 
     def getFileName (self):
         """
         Get the name of the file
         """
         return self._fileName
-    
+
 
     def setFileName(self, newFileName):
         """
@@ -26,7 +28,7 @@ class File:
         Requires: newFileName is str with txt extension
         """
         self._fileName = newFileName
-        
+
 
     def openFile(self):
         """
@@ -87,10 +89,10 @@ class File:
         Requires: File Object, with the opened file
         Ensures: Return of List of Client Objects
         """
-        clientList = []
+        clientList = ClientCollection()
         for line in inFile:
             name, local, start_date, start_hour, max_price, min_rep, domain, job_dur = line.strip().split(', ')
-            clientList.append(Client(name, local, start_date, start_hour, max_price, min_rep, domain, job_dur))
+            clientList.appendClient(Client(name, local, start_date, start_hour, max_price, min_rep, domain, job_dur))
 
         return clientList
 
