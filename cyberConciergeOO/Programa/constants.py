@@ -1,3 +1,8 @@
+#2018-2019 Programação II (LTI)
+#Grupo 02
+#51893 Miguel Alexandre Almeida
+#53311 José Carlos Aurora da Costa Silva Ferreira
+
 ### HEADER INDEX ###
 HEADER_LINES=7 #Number of lines in the header
 HEADER_HOURS=3 

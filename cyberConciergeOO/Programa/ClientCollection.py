@@ -1,3 +1,8 @@
+#2018-2019 Programação II (LTI)
+#Grupo 02
+#51893 Miguel Alexandre Almeida
+#53311 José Carlos Aurora da Costa Silva Ferreira
+
 import constants
 from copy import deepcopy
 
@@ -12,7 +17,7 @@ class ClientCollection:
         self._clientCollection = sorted(self._clientCollection, key=lambda clients:(clients.getClientJobStartHour(), clients.getClientJobStartDate()))
         pass
 
-    def __getitem__(self, index):
+    def __getClientItem__(self, index):
         return self._clientCollection[index]
 
     def getClientList(self):
