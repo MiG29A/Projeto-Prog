@@ -5,7 +5,7 @@
 
 from copy import deepcopy
 class Expert:
-    
+
     def __init__(self,name, local, domain, reputation, price, lastJob_data, lastJob_hour, amount):
         """
         Receives all the parameters pertaining to a expert, and creates a client object.
@@ -27,57 +27,52 @@ class Expert:
 
 
     def getExpertName(self):
-            """
-            Returns Expert Name 
-            """
-            return self._expertName
+        """
+        Returns Expert Name
+        """
+        return self._expertName
 
     def getExpertLocal(self):
-             """
-            Returns Expert Location
-            """
-            return self._expertLocal
+        """
+        Returns Expert Location
+        """
+        return self._expertLocal
 
     def getExpertDomain(self):
-             """
-            Returns Expert Domain
-            """
-            return self._expertDomain
+        """
+        Returns Expert Domain
+        """
+        return self._expertDomain
 
     def getExpertReputation (self):
-             """
-            Returns Expert Reputation
-            """
-            return self._expertReputation
+        """
+        Returns Expert Reputation
+        """
+        return self._expertReputation
 
     def getExpertPrice(self):
-             """
-            Returns Expert Price
-            """
-            return self._expertPrice
+        """
+        Returns Expert Price
+        """
+        return self._expertPrice
 
-    def getExpertLastJobData (self):
-             """
-            Returns Expert Last Job Data
-            """
-            return self._expertLastJobData
+    def getExpertLastJobDate (self):
+        """
+        Returns Expert Last Job Date
+        """
+        return self._expertLastJobDate
 
     def getExpertLastJobHour (self):
-             """
-            Returns Expert Last Job Hour 
-            """
-            return self._expertLastJobHour
-        
+        """
+        Returns Expert Last Job Hour
+        """
+        return self._expertLastJobHour
+
     def getExpertAmount (self):
-             """
-            Returns Expert Amount 
-            """
-            return self._expertAmount
+        """
+        Returns Expert Amount
+        """
+        return self._expertAmount
 
     def getExpertObject(self):
-            return deepcopy(self._expertObject)
-
-        
-
-        
-        
+        return deepcopy(self._expertObject)

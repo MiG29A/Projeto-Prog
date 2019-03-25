@@ -8,8 +8,11 @@ from File import File
 from Expert import Expert
 from Client import Client
 from collections import UserList
+
+import Scheduler
+
 from ClientCollection import ClientCollection
-from ExpertCollection import ExpertCollection 
+from ExpertCollection import ExpertCollection
 import constants
 
 
@@ -21,22 +24,31 @@ def assign(fileNameExperts, fileNameClients):
     """
     inFileExperts = File(fileNameExperts)
     inFileExpertsHeader, inFileExpertsContent = inFileExperts.readFileExpert()
-    
+
     inFileClients = File(fileNameClients)
     inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
 
+inputFileName1 = "2019y01m12clients09h00.txt"
+inputFileName2 = "2019y01m12experts09h00.txt"
 
-inputFileName1, inputFileName2 = sys.argv[1:]
+inFileExperts = File(inputFileName2)
+inFileExpertsHeader, inFileExpertsContent = inFileExperts.readFileExpert()
 
-assign(inputFileName1, inputFileName2)
-
-######## TEST 
-inFileClients = File("2019y01m12clients09h00.txt") 
+inFileClients = File(inputFileName1)
 inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
 
-print(inFileClientsHeader.getHeader())
+Scheduler.assignTasks(inFileClientsContent, inFileExpertsContent, inFileClientsHeader.getHeaderTime())
+#inputFileName1, inputFileName2 = sys.argv[1:]
 
-inFileClientsContent.sortClient()
+#assign(inputFileName1, inputFileName2)
+
+######## TEST
+#inFileClients = File("2019y01m12clients09h00.txt")
+#inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
+
+#print(inFileClientsHeader.getHeader())
+
+#inFileClientsContent.sortClient()
 
 #for line in inFileClientsContent:
 #    print (line.getClientObject())

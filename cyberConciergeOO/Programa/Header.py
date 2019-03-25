@@ -16,3 +16,24 @@ class Header:
 
     def getHeader(self):
         return deepcopy(self._headerList)
+
+    def getHeaderDate(self):
+        return self._headerDate
+
+    def getHeaderTime(self):
+        return self._headerTime
+
+    def getHeaderScope(self):
+        return self._headerScope
+
+    def setHeaderDate(self, date):
+        self._headerDate = date
+
+    def setHeaderTime(self, time):
+        self._headerTime = time
+
+    def setHeaderScope(self, scope):
+        self._headerScope = scope
+
+    def __getitem__(self):
+        return self._headerScope

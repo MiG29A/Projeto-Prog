@@ -15,7 +15,7 @@ class ClientCollection:
 
     def sortClient(self):
         self._clientCollection = sorted(self._clientCollection, key=lambda clients:(clients.getClientJobStartHour(), clients.getClientJobStartDate()))
-        pass
+        return self._clientCollection
 
     def __getClientItem__(self, index):
         return self._clientCollection[index]
