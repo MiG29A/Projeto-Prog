@@ -13,9 +13,8 @@ class SchedulingCollection:
     def appendScheduling(self, schedulingObj):
         self._scheduleCollection.append(schedulingObj)
 
-    def sortClient(self):
-        #self._scheduleCollection = sorted(self._scheduleCollection, key=lambda clients:(clients.getClientJobStartHour(), clients.getClientJobStartDate()))
-        pass
+    def sortSchedule(self):
+        self._scheduleCollection = sorted(self._scheduleCollection, key=lambda scheduling:(scheduling.getJobStartDate(), scheduling.getJobStartHour(), scheduling.getClientName(), scheduling.getExpertName()))
 
     def __getitem__(self, index):
         return self._scheduleCollection[index]

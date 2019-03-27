@@ -131,5 +131,7 @@ class Client:
         """
         self._clientJobDuration = clientJobDuration
 
+    def __str__(self):
+        return self._clientName+ ',' +self._clientLocal+ ',' +self._clientJobStartDate+ ',' +self._clientJobStartHour+ ',' +self._clientJobMaxPrice+ ',' +self._clientMinRep+ ',' +self._clientJobDomain+ ',' +self._clientJobDuration
     #def setClientObject(self, clientObject):
          #deepcopy(self._clientObject)

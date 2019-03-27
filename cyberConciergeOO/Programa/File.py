@@ -9,6 +9,7 @@ from Client import  Client
 from Expert import Expert
 from collections import UserList
 from ClientCollection import ClientCollection
+from ExpertCollection import ExpertCollection
 
 class File:
     def __init__(self, fileName):
@@ -107,10 +108,12 @@ class File:
         Requires: File Object, with the opened file
         Ensures: Return of List of Expert Objects
         """
-        expertList = []
+        expertList = ExpertCollection()
         for line in inFile:
             name, local, domains, reputation, price, date, hour, total_renum = line.strip().split(', ')
-            expertList.append(Expert(name, local, domains, reputation, price, date, hour, total_renum))
+            domains = tuple(domains.strip("(").strip(")").split("; "))
+
+            expertList.appendExpert(Expert(name, local, domains, reputation, price, date, hour, total_renum))
 
         return expertList
 

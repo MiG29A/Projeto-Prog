@@ -28,8 +28,8 @@ def assign(fileNameExperts, fileNameClients):
     inFileClients = File(fileNameClients)
     inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
 
-inputFileName1 = "2019y01m12clients09h00.txt"
-inputFileName2 = "2019y01m12experts09h00.txt"
+inputFileName1 = "2019y02m15clients10h30.txt"
+inputFileName2 = "2019y02m15experts10h30.txt"
 
 inFileExperts = File(inputFileName2)
 inFileExpertsHeader, inFileExpertsContent = inFileExperts.readFileExpert()
@@ -37,7 +37,11 @@ inFileExpertsHeader, inFileExpertsContent = inFileExperts.readFileExpert()
 inFileClients = File(inputFileName1)
 inFileClientsHeader, inFileClientsContent = inFileClients.readFileClient()
 
-Scheduler.assignTasks(inFileClientsContent, inFileExpertsContent, inFileClientsHeader.getHeaderTime())
+
+teste = Scheduler.assignTasks(inFileExpertsContent, inFileClientsContent, inFileClientsHeader.getHeaderTime())
+for t in teste:
+    print(t)
+
 #inputFileName1, inputFileName2 = sys.argv[1:]
 
 #assign(inputFileName1, inputFileName2)

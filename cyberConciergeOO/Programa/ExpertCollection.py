@@ -13,13 +13,12 @@ class ExpertCollection:
     def appendExpert(self, expertObj):
         self._expertCollection.append(expertObj)
 
-
     def sortExpert(self):
         self._expertCollection = sorted(self._expertCollection, key=lambda experts:(experts.getExpertLastJobDate(), experts.getExpertLastJobHour(), experts.getExpertLastJobDate(), experts.getExpertPrice(), experts.getExpertAmount(), experts.getExpertName()))
-        return self._clientCollection
+        return self._expertCollection
 
     def __getExpertItem__(self, index):
         return self._expertCollection [index]
 
     def getExpertList (self):
-        return deepcopy(self._expertCollection)
+        return self._expertCollection

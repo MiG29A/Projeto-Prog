@@ -4,9 +4,11 @@
 #53311 José Carlos Aurora da Costa Silva Ferreira
 
 from copy import deepcopy
+from ExpertCollection import ExpertCollection
+
 class Expert:
 
-    def __init__(self,name, local, domain, reputation, price, lastJob_data, lastJob_hour, amount):
+    def __init__(self,name, local, domain, reputation, price, lastJob_date, lastJob_hour, amount):
         """
         Receives all the parameters pertaining to a expert, and creates a client object.
         Requires: Expert Name, Expert Localization, Expert Domain, Expert reputation,
@@ -18,12 +20,12 @@ class Expert:
         self._expertDomain = domain
         self._expertReputation = reputation
         self._expertPrice = price
-        self._expertLastJobData = lastJob_data
+        self._expertLastJobDate = lastJob_date
         self._expertLastJobHour = lastJob_hour
         self._expertAmount = amount
 
         self._expertObject = [self._expertName, self._expertLocal, self._expertDomain, self._expertReputation,
-                             self._expertPrice, self._expertLastJobData, self._expertLastJobHour,  self._expertAmount]
+                             self._expertPrice, self._expertLastJobDate, self._expertLastJobHour,  self._expertAmount]
 
 
     def getExpertName(self):
@@ -73,6 +75,9 @@ class Expert:
         Returns Expert Amount
         """
         return self._expertAmount
+
+    def __str__(self):
+        return self._expertName+ "," +self._expertLocal+ "," +str(self._expertDomain)+ "," +self._expertReputation+ "," +self._expertPrice+ "," +self._expertLastJobDate+ "," +self._expertLastJobHour+ "," +self._expertAmount
 
     def getExpertObject(self):
         return deepcopy(self._expertObject)
